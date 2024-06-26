@@ -1,0 +1,25 @@
+{
+  "name": "playwrightdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonnyporter/playwrightDemo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonnyporter/playwrightDemo/issues"
+  },
+  "homepage": "https://github.com/jonnyporter/playwrightDemo#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "@types/node": "^20.14.9"
+  },
+  "dependencies": {
+    "dateformat": "^4.6.3"
+  }
+}
