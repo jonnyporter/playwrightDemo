@@ -1,18 +1,20 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
-import { NavBar } from '../pages/navBar';
+import { NavBar } from '../pages/NavBar';
 import { SearchResultsPage } from '../pages/SearchResultsPage';
 import { StayPage } from '../pages/StayPage';
 const dateFormat = require('dateformat');
+
+test.beforeEach(async ({ page }) => {
+    // Go to the home page
+    const homePage = new HomePage(page);
+    await homePage.goToHomePage();
+});
 
 test('Validate Search with only Where', async ({ page, context }) => {
 
   const cityState = 'Portland, OR';
   const cityStateCountry = 'Portland, Oregon, United States';
-
-  // Go to the home page
-  const homePage = new HomePage(page);
-  await homePage.goToHomePage();
 
   // Search for a location
   const navBar = new NavBar(page);
@@ -53,10 +55,6 @@ test('Validate Search with only Check in and Check out', async ({ page, context 
   const formattedTomorrow = dateFormat(tomorrow, 'mm/dd/yyyy');
   const checkIn = dateFormat(today, 'm/dd/yyyy');;
   const checkOut = dateFormat(tomorrow, 'm/dd/yyyy');
-
-  // Go to the home page
-  const homePage = new HomePage(page);
-  await homePage.goToHomePage();
 
   // Search for stay by check in and check out dates
   const navBar = new NavBar(page);
